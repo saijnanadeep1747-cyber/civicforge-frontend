@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://civicforge-backend-dipd.onrender.com';
+const API_BASE_URL = 'https://civicforge-backend-dipd.onrender.com';
 
 export async function fetchChallenges() {
   const res = await fetch(`${API_BASE_URL}/challenges`);
