@@ -7,7 +7,7 @@ export default function GraveyardPage() {
   const { data: challenges, isLoading, isError } = useQuery({
     queryKey: ['challenges'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/api/challenges');
+      const res = await fetch('https://civicforge-backend-dipd.onrender.com/api/challenges');
       if (!res.ok) throw new Error('Failed to fetch from server');
       return res.json();
     },
@@ -16,7 +16,7 @@ export default function GraveyardPage() {
   // 2. Mutation for Reviving Projects
   const reviveMutation = useMutation({
     mutationFn: async (id: string) => {
-      const res = await fetch(`http://localhost:5000/api/challenges/${id}/revive`, {
+      const res = await fetch(`https://civicforge-backend-dipd.onrender.com/api/challenges/${id}/revive`, {
         method: 'PATCH',
       });
       if (!res.ok) throw new Error('Revive failed');
